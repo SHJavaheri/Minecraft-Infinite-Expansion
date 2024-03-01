@@ -1,6 +1,9 @@
 package net.dyce.miemod;
 
 import com.mojang.logging.LogUtils;
+import net.dyce.miemod.item.ModCreativeModTabs;
+import net.dyce.miemod.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
@@ -24,6 +27,10 @@ public class MinecraftInfiniteExpansion {
     public MinecraftInfiniteExpansion() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        ModCreativeModTabs.register(modEventBus);
+
+        ModItems.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -35,7 +42,10 @@ public class MinecraftInfiniteExpansion {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.SAPPHIRE);
+            event.accept(ModItems.RAW_SAPPHIRE);
+        }
     }
 
     @SubscribeEvent
