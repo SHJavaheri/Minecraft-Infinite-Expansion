@@ -1,6 +1,7 @@
 package net.dyce.miemod;
 
 import com.mojang.logging.LogUtils;
+import net.dyce.miemod.block.ModBlocks;
 import net.dyce.miemod.item.ModCreativeModTabs;
 import net.dyce.miemod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -30,6 +31,7 @@ public class MinecraftInfiniteExpansion {
         ModCreativeModTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 

@@ -2,5 +2,8 @@
   "item.miemod.sapphire": "Sapphire",
   "item.miemod.raw_sapphire": "Raw Sapphire",
 
+  "block.miemod.sapphire_block": "Block of Sapphire",
+  "block.miemod.sapphire_ore": "Sapphire Ore",
+
   "creativetab.new_ores_tab": "Minerals"
 }
