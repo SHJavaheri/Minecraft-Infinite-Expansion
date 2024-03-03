@@ -4,6 +4,9 @@
 
   "block.miemod.sapphire_block": "Block of Sapphire",
   "block.miemod.sapphire_ore": "Sapphire Ore",
+  "block.miemod.deepslate_sapphire_ore": "Deepslate Sapphire Ore",
+  "block.miemod.end_stone_sapphire_ore": "Endstone Sapphire Ore",
+  "block.miemod.nether_sapphire_ore": "Nether Sapphire Ore",
 
   "creativetab.new_ores_tab": "Minerals"
 }
