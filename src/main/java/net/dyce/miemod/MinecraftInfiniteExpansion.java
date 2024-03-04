@@ -2,7 +2,7 @@ package net.dyce.miemod;
 
 import com.mojang.logging.LogUtils;
 import net.dyce.miemod.block.ModBlocks;
-import net.dyce.miemod.item.ModCreativeModTabs;
+import net.dyce.miemod.item.ModCreativeModeTabs;
 import net.dyce.miemod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -28,7 +28,7 @@ public class MinecraftInfiniteExpansion {
     public MinecraftInfiniteExpansion() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
-        ModCreativeModTabs.register(modEventBus);
+        ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
