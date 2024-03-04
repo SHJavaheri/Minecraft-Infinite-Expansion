@@ -42,6 +42,17 @@ public class ModCreativeModeTabs {
                     })
                     .build());
 
+
+    public static final RegistryObject<CreativeModeTab> YUMMY_FOOD = CREATIVE_MODE_TABS.register("yummy_food",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.STRAWBERRY.get()))
+                    .title(Component.translatable("creativetab.yummy_food"))
+                    .displayItems((pParameters, pOutput) -> {
+                        pOutput.accept(ModItems.STRAWBERRY.get());
+
+
+                    })
+                    .build());
+
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
     }
