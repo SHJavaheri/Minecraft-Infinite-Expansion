@@ -53,6 +53,17 @@ public class ModCreativeModeTabs {
                     })
                     .build());
 
+
+    public static final RegistryObject<CreativeModeTab> FUEL_SOURCE = CREATIVE_MODE_TABS.register("fuel_source",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.PINE_CONE.get()))
+                    .title(Component.translatable("creativetab.fuel_source"))
+                    .displayItems((pParameters, pOutput) -> {
+                        pOutput.accept(ModItems.PINE_CONE.get());
+
+
+                    })
+                    .build());
+
     public static void register(IEventBus eventBus) {
         CREATIVE_MODE_TABS.register(eventBus);
     }
