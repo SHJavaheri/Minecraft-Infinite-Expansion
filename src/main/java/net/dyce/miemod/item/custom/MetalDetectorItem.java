@@ -27,7 +27,8 @@ public class MetalDetectorItem extends Item {
                 BlockState state = pContext.getLevel().getBlockState(positionClicked.below(i));
 
                 if(isValuableBlock(state)){
-                    outputValuableCoordinates(positionClicked.below(i), player, state.getBlock());
+                    outputValuableCoordinates(positionClicked.below(i), positionClicked, player, state.getBlock());
+
                     foundBlock = true;
 
                     break;
@@ -35,7 +36,7 @@ public class MetalDetectorItem extends Item {
             }
 
             if (!foundBlock) {
-                player.sendSystemMessage(Component.literal("No Valuables Found, womp womp :("));
+                player.sendSystemMessage(Component.literal("No Valuables Found"));
             }
         }
 
@@ -46,12 +47,19 @@ public class MetalDetectorItem extends Item {
         return InteractionResult.SUCCESS;
     }
 
-    private void outputValuableCoordinates(BlockPos blockPos, Player player, Block block) {
-        player.sendSystemMessage(Component.literal("Found " + I18n.get(block.getDescriptionId()) + " at" +
-                "(" + blockPos.getX() + ", " + blockPos.getY() + ", " + blockPos.getZ() + ")"));
+    private void outputValuableCoordinates(BlockPos blockPos, BlockPos blockRightClickedPos, Player player, Block block) {
+        int distanceBelow = blockRightClickedPos.getY() - blockPos.getY();
+        player.sendSystemMessage(Component.literal("Found " + I18n.get(block.getDescriptionId()) + " " + distanceBelow + " blocks below you!"));
     }
 
+
     private boolean isValuableBlock(BlockState state) {
-        return state.is(Blocks.IRON_ORE) || state.is(Blocks.DIAMOND_ORE);
+        return state.is(Blocks.IRON_ORE) || state.is(Blocks.DEEPSLATE_IRON_ORE)
+                || state.is(Blocks.IRON_BLOCK) || state.is(Blocks.RAW_IRON_BLOCK)
+                || state.is(Blocks.COPPER_ORE) || state.is(Blocks.DEEPSLATE_COPPER_ORE)
+                || state.is(Blocks.COPPER_BLOCK) || state.is(Blocks.RAW_COPPER_BLOCK)
+                || state.is(Blocks.COAL_ORE) || state.is(Blocks.DEEPSLATE_COAL_ORE)
+                || state.is(Blocks.COAL_BLOCK) || state.is(Blocks.REDSTONE_ORE)
+                || state.is(Blocks.DEEPSLATE_REDSTONE_ORE);
     }
 }
