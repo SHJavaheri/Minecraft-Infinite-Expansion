@@ -16,6 +16,14 @@
   "item.miemod.strawberry": "Strawberry",
 
 
+  "item.miemod.pine_cone": "Pine Cone",
+
+
+  "tooltip.miemod.metal_detector.tooltip": "Finds valuables underground!",
+
+
   "creativetab.new_ores_tab": "Minerals",
-  "creativetab.new_tools_tab": "New Tools"
+  "creativetab.new_tools_tab": "New Tools",
+  "creativetab.yummy_food": "Yummy Food",
+  "creativetab.fuel_source": "Fuel Source"
 }
