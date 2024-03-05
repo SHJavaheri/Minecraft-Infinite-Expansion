@@ -33,10 +33,10 @@ public class ModCreativeModeTabs {
 
 
     public static final RegistryObject<CreativeModeTab> NEW_TOOLS_TAB = CREATIVE_MODE_TABS.register("new_tools_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.METAL_DETECTOR.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.ORE_DETECTOR.get()))
                     .title(Component.translatable("creativetab.new_tools_tab"))
                     .displayItems((pParameters, pOutput) -> {
-                        pOutput.accept(ModItems.METAL_DETECTOR.get());
+                        pOutput.accept(ModItems.ORE_DETECTOR.get());
 
 
                     })

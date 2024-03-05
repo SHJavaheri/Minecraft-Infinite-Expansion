@@ -1,5 +1,6 @@
 package net.dyce.miemod.item.custom;
 
+import net.dyce.miemod.util.ModTags;
 import net.minecraft.client.resources.language.I18n;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -11,14 +12,13 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class MetalDetectorItem extends Item {
-    public MetalDetectorItem(Properties pProperties) {
+public class OreDetectorItem extends Item {
+    public OreDetectorItem(Properties pProperties) {
         super(pProperties);
     }
 
@@ -55,7 +55,7 @@ public class MetalDetectorItem extends Item {
 
     @Override
     public void appendHoverText(ItemStack pStack, @Nullable Level pLevel, List<Component> pTooltipComponents, TooltipFlag pIsAdvanced) {
-        pTooltipComponents.add(Component.translatable("tooltip.miemod.metal_detector.tooltip"));
+        pTooltipComponents.add(Component.translatable("tooltip.miemod.ore_detector.tooltip"));
         super.appendHoverText(pStack, pLevel, pTooltipComponents, pIsAdvanced);
     }
 
@@ -66,12 +66,6 @@ public class MetalDetectorItem extends Item {
 
 
     private boolean isValuableBlock(BlockState state) {
-        return state.is(Blocks.IRON_ORE) || state.is(Blocks.DEEPSLATE_IRON_ORE)
-                || state.is(Blocks.IRON_BLOCK) || state.is(Blocks.RAW_IRON_BLOCK)
-                || state.is(Blocks.COPPER_ORE) || state.is(Blocks.DEEPSLATE_COPPER_ORE)
-                || state.is(Blocks.COPPER_BLOCK) || state.is(Blocks.RAW_COPPER_BLOCK)
-                || state.is(Blocks.COAL_ORE) || state.is(Blocks.DEEPSLATE_COAL_ORE)
-                || state.is(Blocks.COAL_BLOCK) || state.is(Blocks.REDSTONE_ORE)
-                || state.is(Blocks.DEEPSLATE_REDSTONE_ORE);
+        return state.is(ModTags.Blocks.ORE_DETECTOR_VALUABLES);
     }
 }

@@ -3,7 +3,7 @@
   "item.miemod.raw_sapphire": "Raw Sapphire",
 
 
-  "item.miemod.metal_detector": "Metal Detector",
+  "item.miemod.ore_detector": "Ore Detector",
 
 
   "block.miemod.sapphire_block": "Block of Sapphire",
@@ -19,7 +19,7 @@
   "item.miemod.pine_cone": "Pine Cone",
 
 
-  "tooltip.miemod.metal_detector.tooltip": "Finds valuables underground!",
+  "tooltip.miemod.ore_detector.tooltip": "Finds valuables underground!",
 
 
   "creativetab.new_ores_tab": "Minerals",
